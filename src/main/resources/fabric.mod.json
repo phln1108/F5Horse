@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "f5horses",
+	"version": "${version}",
+	"name": "F5Horses",
+	"description": "A better way to ride a mount!",
+	"authors": [
+		"phln1108"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/f5horses/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.phln1108.f5horses.F5Horses"
+		],
+		"fabric-datagen": [
+			"com.phln1108.f5horses.F5HorsesDataGenerator"
+		],
+		"client": [
+			"com.phln1108.f5horses.F5HorsesClient"
+		]
+	},
+	"mixins": [
+		"f5horses.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
