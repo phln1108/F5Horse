@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Entity.class)
 public class HorseMountMixin {
-    @Inject(method = "startRiding(Lnet/minecraft/entity/Entity;)Z", at = @At("TAIL"), cancellable = true)
+    @Inject(method = "startRiding(Lnet/minecraft/entity/Entity;)Z", at = @At("HEAD"), cancellable = true)
     private void onMount(Entity entity, CallbackInfoReturnable<ActionResult> info) {
         ActionResult result = HorseMountCallback.EVENT.invoker().interact((PlayerEntity) (Object) this);
 
