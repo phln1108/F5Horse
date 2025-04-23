@@ -4,7 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "ExampleMixin",
-    "HorseMountMixin"
+    "HorseMountMixin",
+    "StopMountingMixin"
   ],
   "injectors": {
     "defaultRequire": 1
