@@ -7,4 +7,5 @@ This mod change the player's perspective when riding a horse
 <img src="./gif.gif" width="450"/>
 
 ### Available for:
-- `Fabric`
+- `Fabric` `1.21`
+
