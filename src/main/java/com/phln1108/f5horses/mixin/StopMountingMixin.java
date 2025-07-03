@@ -14,6 +14,7 @@ public abstract class StopMountingMixin {
     @Inject(method = "dismountVehicle", at = @At("HEAD"))
     private void onStopRiding(CallbackInfo info) {
         PlayerEntity player = (PlayerEntity) (Object) this;
-        StopMountCallback.EVENT.invoker().interact(player);
+        if (player.isMainPlayer())
+            StopMountCallback.EVENT.invoker().interact(player);
     }
 }

@@ -14,10 +14,12 @@ public class HorseMountMixin {
     @Inject(method = "startRiding(Lnet/minecraft/entity/Entity;Z)Z", at = @At("TAIL"), cancellable = true)
     private void onMount(Entity entity, boolean force, CallbackInfoReturnable<Boolean> info) {
         if ((Object) this instanceof PlayerEntity player) {
-            ActionResult result = HorseMountCallback.EVENT.invoker().interact(player);
+            if (player.isMainPlayer()) {
+                ActionResult result = HorseMountCallback.EVENT.invoker().interact(player);
 
-            if (result == ActionResult.FAIL) {
-                info.setReturnValue(false);
+                if (result == ActionResult.FAIL) {
+                    info.setReturnValue(false);
+                }
             }
         }
     }

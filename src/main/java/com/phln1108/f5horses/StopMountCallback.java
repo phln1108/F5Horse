@@ -9,7 +9,9 @@ public interface StopMountCallback {
     Event<StopMountCallback> EVENT = EventFactory.createArrayBacked(StopMountCallback.class,
             (listeners) -> (player) -> {
                 for (StopMountCallback listener : listeners) {
+
                     ActionResult result = listener.interact(player);
+
 
                     if (result != ActionResult.PASS) {
                         return result;

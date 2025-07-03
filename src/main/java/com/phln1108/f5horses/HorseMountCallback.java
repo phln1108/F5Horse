@@ -12,6 +12,8 @@ public interface HorseMountCallback {
                 for (HorseMountCallback listener : listeners) {
                     ActionResult result = ActionResult.PASS;
 
+
+
                     result = listener.interact(player);
 
                     if (result != ActionResult.PASS) {
